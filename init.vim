@@ -9,6 +9,27 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'morhetz/gruvbox'
   " neomake is a code linting tool that runs in the background.
   Plug 'neomake/neomake'
+  " fireplace is  quasi repl for clojure
+  Plug 'tpope/vim-fireplace'
+  " fugitive is plugin for handling cvs inside vim"
+  Plug 'tpope/vim-fugitive'
+  " provides an asynchronous keyword completion inthe current buffer"
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " comment stuff out"
+  Plug 'tpope/vim-commentary'
+  " Surround.vim is all about surroundings:
+  " parentheses, brackets, quotes, XML tags, and more.
+  " The plugin provides mappings to easily delete, change and add such surroundings in pairs."
+  Plug 'tpope/vim-surround'
+  "Clojure stuff"
+  Plug 'guns/vim-clojure-static'
+  Plug 'guns/vim-clojure-highlight'
+  Plug 'tpope/vim-sexp-mappings-for-regular-people'
+  Plug 'guns/vim-sexp'
+  " file drawer"
+  Plug 'scrooloose/nerdtree'
+  "git plugin for nerd tree"
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 " }
 
 call plug#end()
@@ -203,6 +224,12 @@ let mapleader="\<SPACE>"
     let g:netrw_winsize=80  " only use 20% screen for netrw
     " FIXME: Preview opens to left and is very narrow
     let g:netrw_preview=1   " open previews vertically
+  " }
+  " deoplete {
+    let g:deoplete#enable_at_startup = 1
+  " }
+  " NERDTree Toggle {
+    map <C-n> :NERDTreeToggle<CR>
   " }
 " }
 
